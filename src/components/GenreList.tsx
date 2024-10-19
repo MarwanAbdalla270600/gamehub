@@ -1,8 +1,14 @@
 import { Spinner } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 
-function GenreList({ handleClick }: { handleClick: (genre: Genre) => void }) {
-  const { data, loading } = useGenres()
+function GenreList({
+  selectedGenre,
+  handleClick,
+}: {
+  selectedGenre: Genre | null;
+  handleClick: (genre: Genre) => void;
+}) {
+  const { data, loading } = useGenres();
   return (
     <ul>
       {loading && <Spinner />}
@@ -13,7 +19,12 @@ function GenreList({ handleClick }: { handleClick: (genre: Genre) => void }) {
               className="w-8 h-8 rounded-md"
               src={genre.image_background}
             ></img>
-            <a onClick={()=>handleClick(genre)} className="text-xl hover:underline hover:cursor-pointer">
+            <a
+              onClick={() => handleClick(genre)}
+              className={`text-xl hover:underline hover:cursor-pointer ${
+                selectedGenre?.slug === genre?.slug ? "font-bold" : ""
+              }`}
+            >
               {genre.name}
             </a>
           </div>

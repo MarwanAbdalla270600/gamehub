@@ -15,7 +15,7 @@ function App() {
       </header>
       <div className="flex px-2 pt-4">
         <div id="aside" className="hidden w-60 md:block">
-          <GenreList handleClick={(genre) => setSelectedGenre(genre)}></GenreList>
+          <GenreList selectedGenre={selectedGenre} handleClick={(genre) => setSelectedGenre(genre)}></GenreList>
         </div>
         <div id="main" className="flex-1">
           <GameGrid selectedGenre={selectedGenre}></GameGrid>
