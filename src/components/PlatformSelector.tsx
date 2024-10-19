@@ -1,7 +1,6 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import usePlatform, { Platform } from "../hooks/usePlatform";
 import { BsChevronDown } from "react-icons/bs";
-import { useState } from "react";
 
 interface Props {
   selectedPlatform: Platform | null;

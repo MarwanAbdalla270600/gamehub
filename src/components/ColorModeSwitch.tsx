@@ -10,7 +10,7 @@ function ColorModeSwitch() {
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
       ></Switch>
-      <label>{colorMode === 'dark'? 'Light Mode' : 'Dark mode'}</label>
+      <label className="text-nowrap">{colorMode === 'dark'? 'Light Mode' : 'Dark mode'}</label>
     </div>
   );
 }
