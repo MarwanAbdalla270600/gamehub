@@ -11,7 +11,7 @@ import { SiNintendoswitch } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
 import { Icon } from "@chakra-ui/react";
-import { Platform } from "../hooks/useGames";
+import { Platform } from "../hooks/usePlatform";
 
 function PlatformIconList({ platforms }: { platforms: Platform[] }) {
   const iconMap: { [key: string]: IconType } = {

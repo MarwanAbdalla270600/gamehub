@@ -1,5 +1,5 @@
 import { Card, Image } from "@chakra-ui/react";
-import PlatformIconList from "./PlattformIconList";
+import PlatformIconList from "./PlatformIconList";
 import getCroppedImageUrl from "../services/image-url";
 import { Game } from "../hooks/useGames";
 
