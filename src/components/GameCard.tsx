@@ -1,7 +1,7 @@
 import { Card, Image } from "@chakra-ui/react";
-import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlattformIconList";
 import getCroppedImageUrl from "../services/image-url";
+import { Game } from "../hooks/useGames";
 
 function GameCard({ game }: { game: Game }) {
   const platforms = game.parent_platforms.map((object) => object.platform);

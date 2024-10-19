@@ -9,9 +9,9 @@ import {
 import { MdPhone } from "react-icons/md";
 import { SiNintendoswitch } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
-import { Platform } from "../hooks/useGames";
 import { IconType } from "react-icons";
 import { Icon } from "@chakra-ui/react";
+import { Platform } from "../hooks/useGames";
 
 function PlatformIconList({ platforms }: { platforms: Platform[] }) {
   const iconMap: { [key: string]: IconType } = {
