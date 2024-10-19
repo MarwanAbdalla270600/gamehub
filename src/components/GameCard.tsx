@@ -1,12 +1,13 @@
-import { Card, CardBody, Image } from "@chakra-ui/react";
+import { Card, Image } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlattformIconList";
+import getCroppedImageUrl from "../services/image-url";
 
 function GameCard({ game }: { game: Game }) {
   const platforms = game.parent_platforms.map((object) => object.platform);
   return (
     <Card borderRadius={10} overflow="hidden">
-      <Image src={game.background_image}></Image>
+      <Image src={getCroppedImageUrl(game.background_image)}></Image>
       <div className="flex flex-col gap-2 p-6">
         <h2 className="text-2xl font-semibold">{game.name}</h2>
         <div className="flex justify-between">
