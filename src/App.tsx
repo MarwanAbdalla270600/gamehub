@@ -6,6 +6,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatform";
 import SortingSelector from "./components/SortingSelector";
+import DynamicHeader from "./components/DynamicHeader";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -29,7 +30,8 @@ function App() {
             handleClick={(genre) => setGameQuery({ ...gameQuery, genre })}
           ></GenreList>
         </div>
-        <div id="main" className="flex-1">
+        <div id="main" className="flex flex-col flex-1 gap-8">
+          <DynamicHeader platform={gameQuery.platform?.name} genre={gameQuery.genre?.name}></DynamicHeader>
           <div className="flex gap-4">
             <PlatformSelector
               selectedPlatform={gameQuery.platform}

@@ -19,7 +19,7 @@ function SortingSelector({ selectedSort, handleSelect }: Props) {
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        {selectedSort ? 'Order by: ' + selectedSort : 'Order by'}
+        {selectedSort ? 'Order by : ' + selectedSort : 'Order by'}
       </MenuButton>
       <MenuList>
         {orderingValues.map((values) => (
