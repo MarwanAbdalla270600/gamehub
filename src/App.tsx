@@ -24,7 +24,7 @@ function App() {
         <NavBar handeSearch={(search) => setGameQuery({...gameQuery, search})}></NavBar>
       </header>
       <div className="flex px-2 pt-4">
-        <div id="aside" className="hidden w-60 md:block">
+        <div id="aside" className="hidden w-52 md:block">
           <GenreList
             selectedGenre={gameQuery.genre}
             handleClick={(genre) => setGameQuery({ ...gameQuery, genre })}

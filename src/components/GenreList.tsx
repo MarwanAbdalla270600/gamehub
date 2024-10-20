@@ -21,7 +21,7 @@ function GenreList({
             ></img>
             <a
               onClick={() => handleClick(genre)}
-              className={`text-xl hover:underline hover:cursor-pointer ${
+              className={`text-xl text-wrap hover:underline hover:cursor-pointer ${
                 selectedGenre?.slug === genre?.slug ? "font-bold" : ""
               }`}
             >
