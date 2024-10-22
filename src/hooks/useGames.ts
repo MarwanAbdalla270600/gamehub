@@ -1,5 +1,5 @@
-import { GameQuery } from "../App";
 import useData from "./useData";
+import { Genre } from "./useGenres";
 import { Platform } from "./usePlatform";
 
 export interface Game {
@@ -9,6 +9,15 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
 }
+
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+  order: string | null;
+  search: string | null;
+  page: number | null;
+}
+
 
 const useGames = (
   gameQuery: GameQuery

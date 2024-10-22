@@ -2,18 +2,12 @@ import { useState } from "react";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/Navbar";
-import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/usePlatform";
 import SortingSelector from "./components/SortingSelector";
 import DynamicHeader from "./components/DynamicHeader";
+import { GameQuery } from "./hooks/useGames";
+import PagingButton from "./components/PagingButtons";
 
-export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
-  order: string | null;
-  search: string | null;
-}
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
@@ -21,7 +15,7 @@ function App() {
   return (
     <div className="container p-4 mx-auto">
       <header className="w-full">
-        <NavBar handeSearch={(search) => setGameQuery({...gameQuery, search})}></NavBar>
+        <NavBar handeSearch={(search) => setGameQuery({ ...gameQuery, search })}></NavBar>
       </header>
       <div className="flex px-2 pt-4">
         <div id="aside" className="hidden w-52 md:block">
@@ -45,6 +39,7 @@ function App() {
             ></SortingSelector>
           </div>
           <GameGrid gameQuery={gameQuery}></GameGrid>
+
         </div>
       </div>
     </div>
